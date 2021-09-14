@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link href="Src/css/Style.css" rel="stylesheet" />
+    <title>Space Invaders 3D</title>
+  </head>
+  <body>
+
+    <div id="acceuil">
+        <div id="highscore"></div>
+         <button id="start">Attrapez les tous!</button>
+    </div>
+
+    <div id="game">
+      <div id="pause">
+        <img id="pokédexpause" src="Src/medias/images/pokédex.png">
+      </div>
+
+      <div id="level1">Niveau 1 !<br>
+        <img id="niveau1" src="Src/medias/images/004.png">
+      </div>
+
+      <div id="level2">Niveau 2 !<br>
+        <img id="niveau2" src="Src/medias/images/005.png">
+      </div>
+
+      <div id="level3">Niveau 3 !<br>
+        <img id="niveau3" src="Src/medias/images/dracaufeu.png">
+      </div>
+
+      <div id="Vies3">
+        <img src="Src/medias/images/3_Vies.png">
+      </div>
+      <div id="Vies2">
+        <img src="Src/medias/images/2_Vies.png">
+      </div>
+      <div id="Vies1">
+        <img src="Src/medias/images/1_Vie.png">
+      </div>
+      <div id="Vies0">
+        <img src="Src/medias/images/0_Vie.png">
+      </div>
+      <div id="Invincible">
+        <img src="Src/medias/images/Invincible.png">
+      </div>
+
+      <div id="pokédex">
+        <img id="pokédeximg" src="Src/medias/images/pokédex3.png">
+      </div>
+
+      <div id="gameover">
+        Game Over !<br>
+        <div id="scorefinal"></div>
+        <button id="menu"> Revenir à l'accueil </button>
+      </div>
+
+      <div id="gamewin">
+        Victoire !<br>
+        <div id="scorefinal2"></div>
+        <button id="nextlevel"> Niveau suivant </button>
+      </div>
+
+      <div id="endgame">
+        Félicitations! Tu es le meilleur dresseur!<br>
+        <div id="scorefinal3"></div>
+        <button id="endmenu"> Revenir à l'acceuil </button>
+      </div>
+
+    </div>
+    <script type = "module" src='./Src/js/Game.js'></script>
+  </body>
+</html>

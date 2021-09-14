@@ -1,0 +1,285 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<html>
+  <head profile="http://dublincore.org/documents/dcq-html/">
+    <link href="Rapport/css/style.css" rel="stylesheet" />
+    <title>Projet SIA - Pokémon Invaders 3D</title>
+  </head>
+  <body>
+    <div id="head">
+      <img class="title" src="Rapport/images/titre.png">
+      <p class="author"><span style="font-weight: bold;">Manon SAUVAGEOT</span></p>
+    </div>
+
+
+    <h2>Introduction</h2>
+    <p>En cette année 2021, on célèbre dans le monde entier le vingt-cinquième anniversaire de la franchise Pokémon. Pour cette occasion, nous vous présentons le jeu <span style="font-weight: bold;">Pokemon Invaders 3D</span>!</p>
+    <img class="title" src="Rapport/images/25.jpg">
+
+    <h2>Déroulement du jeu</h2>
+    <ul>
+      <li>Un écran d'accueil à l'effigie de Pokémon affiche le nom du jeu <span style="font-weight: bold;">Pokemon
+        Invaders 3D</span>, le nom de l'auteur <span style="font-weight: bold;">Manon SAUVAGEOT</span>, les Pokémons à attraper et leurs points.
+      </li>
+      <li>Le dresseur doit cliquer sur le bouton <span style="font-weight: bold;">'Attrapez les tous'</span> pour commencer une partie et démarrer le premier combat.</li>
+      <li>Durant la partie, le dresseur gagne des points en lançant des Pokéballs pour attraper les Pokémons qui oscillent horizontalement tout en se rapprochant pour attaquer.</li>
+      <li>Le dresseur perd des points de vie s'il est touché par une attaque Pokémon. La barre de vie se trouve en haut à droite de l'écran.</li>
+      <li>Le combat continue tant que le dresseur a encore ses trois vies et tant que les Pokémons ne sont pas arrivés dans la zone de ses abris.</li>
+      <li>La fin du combat affiche <span style="font-weight: bold;">"Game Over !"</span> et le score si le dresseur perd. Il est alors possible de revenir à la page d'accueil pour retenter sa chance.</li>
+      <li>La fin du combat affiche <span style="font-weight: bold;">"Victoire !"</span> et le score si le dresseur gagne. Il peut ensuite continuer vers le niveau suivant.</li>
+      <li>Le dresseur peut participer à trois combats à la suite lors d'une partie à l'image des arènes Pokémon. Chaque combat est de plus en plus dur et le dresseur ne récupère pas la vie qu'il a perdu.</li>
+      <li>La page d'acceuil affiche également le score le plus élevé que le dresseur a eu lors d'une partie.</li>
+    </ul>
+
+    <div class="center">
+      <div class="gallery">
+        <a target="_blank" href="Rapport/images/accueil.png">
+          <img src="Rapport/images/accueil.png">
+        </a>
+        <div class="desc">Ecran d'accueil</div>
+      </div>
+      <div class="gallery">
+        <img src="Rapport/images/gameover.png">
+        <div class="desc">Message pour un combat perdu</div>
+      </div>
+      <div class="gallery">
+        <img src="Rapport/images/victoire.png">
+        <div class="desc">Message pour un combat gagné</div>
+      </div>
+    </div>
+
+    <h2>Technologies logicielles</h2>
+    <ul>
+      <li>Le jeu tourne dans un navigateur Web et est constitué de primitives graphiques 3D animées.</li>
+      <li>Le jeu s'appuye sur la bibliothèque <a href="http://threejs.org/">Three.js</a>.</li>
+      <li>Les librairies EffectComposer, RenderPass, HalftonePass sont utilisées pour l'effet post-processing.</li>
+      <li>La librairie GLTFLoader est utilisée dans les classes pour charger les modèles 3D des Pokémons, du dresseur et des projectiles.</li>
+      <li>La librairie TrackballControls est utilisée pour la caméra.</li>
+    </ul>
+
+    <h2>Graphisme</h2>
+      <ul>
+        <li>Les Pokémons du jeu ont un aspect 3D et sont animés. Ils se déplacent horizontalement et se rapprochent du dresseur petit à petit. Les quatre premiers Pokémons sont ceux qu'il faut absolument attraper pour gagner le combat. 
+          Le dernier Pokémon est un Pokémon légendaire qui ne s'attrape pas facilement, il vous rapportera donc des points bonus si vous l'attrapez.</li>
+        <br>
+        <div class="center">
+          <div class="gallery2">
+              <img src="Rapport/images/whimsicott.png">
+            <div class="desc">Farfaduvet</div>
+          </div>
+    
+          <div class="gallery2">
+            <img src="Rapport/images/diglett.png">
+            <div class="desc">Taupiqueur</div>
+          </div>
+          <div class="gallery2">
+            <img src="Rapport/images/pikachu.png">
+            <div class="desc">Pikachu</div>
+          </div>
+          <div class="gallery2">
+            <img src="Rapport/images/squirtle.png">
+            <div class="desc">Carapuce</div>
+          </div>
+          <div class="gallery2">
+            <img src="Rapport/images/mew.png">
+            <div class="desc">Mew</div>
+          </div>
+        </div>
+        <br>
+        <li>Il y a un décor d'arène Pokémon dans le jeu.</li>
+        <br>
+        <div class="center">
+          <div class="gallery">
+            <a target="_blank" href="Rapport/images/try.jpeg">
+              <img src="Rapport/images/try.jpeg">
+            </a>
+            <div class="desc">Décor d'arène Pokémon</div>
+          </div>
+        </div>
+        <br>
+        <li>Tous les objets de la scène ont divers matériaux notamment les abris du dresseur qui ont pour texture les cartes Pokémons de ceux que l'on doit attraper.</li>
+        <br>
+        <div class="center">
+          <img src="Rapport/images/carte4.png">
+          <img src="Rapport/images/carte2.png">
+          <img src="Rapport/images/carte1.png">
+          <img src="Rapport/images/carte3.png">
+          <img src="Rapport/images/carte.png">
+        </div>
+        <br>
+        <li>Le dresseur et ses projectiles, et ceux des Pokémons ont également un aspect 3D et sont animés.</li>
+        <br>
+        <div class="center">
+          <div class="gallery2">
+            <img src="Rapport/images/dresseur.png">
+          <div class="desc">Dresseur</div>
+        </div>
+          <div class="gallery2">
+              <img src="Rapport/images/pokéball.png">
+            <div class="desc">Pokéball lancée par le dresseur</div>
+          </div>
+          <div class="gallery2">
+            <img src="Rapport/images/egg.png">
+          <div class="desc">Oeufs lancés par les Pokémons</div>
+        </div>
+        </div>
+        <br>
+        <li>Un effet de post-processing rgb halftone est utilisé lorsqu'un abris est touché. L'effet est désactivable avec la <span style="font-weight: bold;">touche 's'</span>.</li>
+      </ul>
+      <div class="center">
+        <div class="gallery">
+          <a target="_blank" href="Rapport/images/effet.png">
+            <img src="Rapport/images/effet.png">
+          </a>
+          <div class="desc">Effet post-processing</div>
+        </div>
+      </div>
+      </br>
+
+    <h2>Dialogues avec l'utilisateur</h2>
+      <ul>
+        <li>Un message apparaît sur l'écran lors de la transition d'un niveau à l'autre.</li>
+        <li>La <span style="font-weight: bold;">touche 'h'</span> permet l'affichage du Pokédex avec le récapitulatif des raccourcis clavier disponibles. </li>
+        <li>La <span style="font-weight: bold;">touche 'p'</span> permet de mettre le jeu en pause et affiche un message sur l'écran.</li>
+      </ul>
+
+      <div class="center">
+        <div class="gallery">
+          <a target="_blank" href="Rapport/images/pokédex3.png">
+            <img src="Rapport/images/pokédex3.png">
+          </a>
+          <div class="desc">Pokédex</div>
+        </div>
+  
+        <div class="gallery">
+          <a target="_blank" href="Rapport/images/pokédex.png">
+            <img src="Rapport/images/pokédex.png">
+          </a>
+          <div class="desc">Pause</div>
+        </div>
+      </div>
+
+    <h2>Points de vue caméra</h2>
+      <ul>
+        <li>Point de vue de la caméra fixe au dessus du terrain avec la <span style="font-weight: bold;">touche directionnelle vers le haut</span>.</li>
+        <li>Point de vue de la caméra mobile attachée au dresseur pour une immersion au coeur du combat grâce à la <span style="font-weight: bold;">touche directionnelle vers le bas</span>.</li>
+      </ul>
+
+      <div class="center">
+        <div class="gallery">
+          <a target="_blank" href="Rapport/images/caméra1.png">
+            <img src="Rapport/images/caméra1.png">
+          </a>
+          <div class="desc">Caméra terrain</div>
+        </div>
+  
+        <div class="gallery">
+          <a target="_blank" href="Rapport/images/caméra3.png">
+            <img src="Rapport/images/caméra3.png">
+          </a>
+          <div class="desc">Caméra dresseur</div>
+        </div>
+  
+      </div>
+
+    <h2>Gestion des collisions</h2>
+      <ul>
+        <li>Les Pokéballs lancées par le dresseur disparaissent quand elles ont touché un Pokémon, quand elles atteignent le bout du terrain ou quand elles touchent un abri.</li>
+        <li>Les oeufs lancés par les Pokémons disparaissent quand ils ont touché le dresseur, quand ils atteignent le bout du terrain ou quand ils touchent l'un des abris du dresseur.</li>
+        <li>Les dégâts sur les abris du dresseur sont matérialisés par une baisse de leur opacité ainsi que par un effet de post-processing si celui-ci est activé.</li>
+        <li>Les captures des Pokémons et les attaques sur le dresseur sont matérialisées par des effets sonores.</li>
+      </ul>
+
+    <h2>Dynamique</h2>
+      <ul>
+        <li>Le dresseur peut se déplacer le long du terrain grâce aux <span style="font-weight: bold;">touches directionnelles droite et gauche</span> pour se cacher derrière les abris, capturer les Pokémons ou esquiver leurs attaques.</li>
+        <li>Le dresseur lance des Pokéballs grâce à la <span style="font-weight: bold;">touche espace</span>. Celles-ci tournent sur elles-même grâce à la vitesse.</li>
+        <li>Les Pokémons se déplacent horizontalement et se rapprochent du dresseur petit à petit.</li>
+        <li>Le Pokémon légendaire tourne sur lui même, et se déplace au fond du terrain. Plus il passe sur le terrain, plus long sera le temps d'attente avant qu'il ne revienne.</li>
+        <li>Les Pokémons lance des oeufs sur le dresseur de façon aléatoire. Les oeufs tournent sur eux-même avec la vitesse.</li>
+        <li>Plus les niveaux augmentent, plus la vitesse d'attaque des Pokémons augmente.</li>
+        <li>Plus les Pokémons se rapprochent, plus ils lancent leurs oeufs rapidemment.</li>
+        <li>Plus les niveaux avancent, plus la dextérité du dresseur pour lancer les Pokéballs augmente.</li>
+      </ul>
+
+    <h2>Musique et sons</h2>
+      <p>Pour une immersion totale dans le combat, des effets sonores ont été ajoutés. Il est possible de couper la musique et tous les effets sonores pour vous concentrer grâce à la <span style="font-weight: bold;">touche 'm'</span> et de les réactiver plus tard.</p>
+      <ul>
+        <li>Lorsque le dresseur capture un Pokémon, vous pourrez entendre le bruit de la Pokéball se refermer.</li>
+        <br>
+        <div>
+          <audio controls src="Src/medias/sounds/attrape.wav"> Your browser does not support the <code>audio</code> element.</audio>
+        </div>
+        <br>
+        <li>Vous pourrez aussi entendre le bruit de l'attaque et la perte de vos points de vie.</li>
+        <br>
+        <div>
+          <audio controls src="Src/medias/sounds/attaque.mp3"> Your browser does not support the <code>audio</code> element.</audio>
+        </div>
+        <br>
+        <li>Si vous perdez votre combat, pas de panique, en revenant à la page d'accueil vous passerez par le centre Pokémon.</li>
+        <br>
+        <div>
+          <audio controls src="Src/medias/sounds/defaite.m4a"> Your browser does not support the <code>audio</code> element.</audio>
+        </div>
+        <br>
+        <!--<li>En revanche si vous gagnez votre combat, vous pourrez profiter de la musique de la victoire.</li>
+        <br>
+        <div>
+          <audio controls src="Src/medias/sounds/Victoire.m4a"> Your browser does not support the <code>audio</code> element.</audio>
+        </div>
+        <br>-->
+        <li>Enfin vous pouvez jouer en chantant à tue tête le générique mythique de Pokémon lors du Niveau 1. </li>
+        <br>
+        <div>
+          <audio controls src="Src/medias/sounds/PokemonMusic.m4a"> Your browser does not support the <code>audio</code> element.</audio>
+        </div>
+        <br>
+        <li>Attention! Fini la rigolade pour les niveaux suivants, vous aurez le droit à la musique entrainante des arènes des Champions.</li>
+        <br>
+        <div>
+          <audio controls src="Src/medias/sounds/Musique.mp3"> Your browser does not support the <code>audio</code> element.</audio>
+        </div>
+        <br>
+      </ul>
+
+    <h2>Triche</h2> 
+      <p>Prévoyez vos potions et Pokéballs magiques pour vous aider durant le combat !</p>
+      <ul>
+        <li> La potion <span style="font-weight: bold;">Touche 'i'</span> : vous permet de devenir invincible. En effet les Pokémons sont repoussés, ne
+          se rapprochent plus et vous ne perdez plus de vie si vous êtes touché par une attaque Pokémons.<br> 
+          Attention tout de même, si vous utilisez une potion <span style="font-weight: bold;">Touche 'i'</span> alors que vous étiez déjà invincible, l'effet sera annulé.</li>
+          <br>
+          <div class="center">
+            <img src="Rapport/images/Invincible.png">
+          </div>
+          <br>
+        <li>La Pokéball <span style="font-weight: bold;">Touche 'k' </span>: vous permet de capturer instantanément tous les Pokémons et donc de pouvoir passer au niveau suivant!<br>
+        Par contre aucun point ne vous sera accordé si vous utilisez cette Pokéball.</li>
+      </ul>
+
+    <h2>Les petits plus !</h2>
+      <ul>
+        <li>Les différents niveaux sont représentés par un Pokémon qui évolue au fil des niveaux.</li>
+        <br>
+        <div class="center">
+          <img src="Rapport/images/niveau1.png">
+          <img src="Rapport/images/niveau2.png">
+          <img src="Rapport/images/niveau3.png">
+        </div>
+        <br>
+        <li>Le niveau de vie du dresseur est matérialisé comme dans les jeux Pokémons.</li>
+        <br>
+        <div class="center">
+          <img src="Rapport/images/3_Vies.png">
+          <img src="Rapport/images/2_Vies.png">
+          <img src="Rapport/images/1_Vie.png">
+        </div>
+        <br>
+        <li>Pikachu, Pokémon emblématique, est présent dans le jeu.</li>
+        <li>Le jeu se base sur le concept des arènes Pokémons, plusieurs combats lors d'une partie. C'est également pour cela que vous ne récupérez pas vos points de vie pour les niveaux suivants et que les dégâts sur vos abris restent visible.</li>
+      </ul>
+
+  </body>
+
+</html>
