@@ -16,4 +16,4 @@ Nous avons du, dans le cadre de cette UE, réaliser le jeu Space Invaders en uti
 Ce jeu, sur le thème de Pokemon, nous permet d'incarner un dresseur pour attraper le maximum de pokemons pour gagner des points et faire le meilleur score. Le jeu possède plusieurs
 niveaux de plus en plus durs. Les pokemons lancent aussi des attaques pour vous faire perdre des vies.
 
-![alt text](http://Rapport/images/camera1.png)
+![alt text](https://github.com/ManonSAUVAGEOT/SpaceInvaders_3D/Rapport/images/camera1.png)
